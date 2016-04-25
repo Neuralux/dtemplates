@@ -8,7 +8,7 @@ dest=""
 mode=""
 owner=""
 group=""
-token="## token ##"
+token="###token###"
 
 while getopts :n:m:s:d:D:M:O:G opt; do
     case "$opt" in
@@ -35,7 +35,6 @@ done
 
 cd "$(dirname "$0")"
 
-
 ## TODO use defaults if src kv isn't there
 sed '1,/${token}/d' ${src} |
     while read -r key val
@@ -44,9 +43,9 @@ sed '1,/${token}/d' ${src} |
     done
 
 source /tmp/${instance}.sh
-rm ${dest}
-mo ${mustache} >> ${dest}
+/usr/bin/mo ${mustache} > ${dest}
 chmod ${mode} ${dest}
 chown ${owner}:${group} ${dest}
+rm /tmp/${instance}.sh
 
-exit $0;
+exit $?;

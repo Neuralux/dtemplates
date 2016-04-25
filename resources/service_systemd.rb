@@ -25,6 +25,7 @@ property :group, String
 property :mode, [String, Integer]
 property :alias, String, required: true
 property :dependencies, Array, default: []
+property :token, String
 
 action :start do
   create_init
@@ -101,7 +102,8 @@ action_class.class_eval do
                 mode: new_resource.mode,
                 owner: new_resource.owner,
                 group: new_resource.group,
-                dependencies: new_resource.dependencies
+                dependencies: new_resource.dependencies,
+                token: new_resource.token
       )
       cookbook 'dtemplate'
       owner 'root'

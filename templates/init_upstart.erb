@@ -5,4 +5,4 @@ start on runlevel [2345]
 setuid dtemplate
 setgid dtemplate
 
-exec <%= @dtemplate %> -n <%= @instance %> -D <%= @defaults %> -m <%= @mustache %> -s <%= @src %> -d <%= @dest %> -M <%= @mode %> -O <%= @owner %> -G <%= @group %>
+exec <%= @dtemplate %> -n <%= @instance %> -D <%= @defaults %> -m <%= @mustache %> -s <%= @src %> -d <%= @dest %> -M <%= @mode %> -O <%= @owner %> -G <%= @group %> -t <%= @token %>

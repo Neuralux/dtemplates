@@ -8,7 +8,7 @@ DTEMPLATE="<%= @dtemplate %>"
 
 function start() {
     echo -n "Starting dtemplate run for <%= @instance %>"
-    ${DTEMPLATE} -n <%= @instance %> -D <%= @defaults %> -m <%= @mustache %> -s <%= @src %> -d <%= @dest %> -M <%= @mode %> -O <%= @owner %> -G <%= @group %>
+    ${DTEMPLATE} -n <%= @instance %> -D <%= @defaults %> -m <%= @mustache %> -s <%= @src %> -d <%= @dest %> -M <%= @mode %> -O <%= @owner %> -G <%= @group %> -t <%= @token %>
 }
 
 case "$1" in

@@ -8,7 +8,7 @@ Before=<%= @dependencies.join(" ") %>
 <% end %>
 [Service]
 Type=oneshot
-Environment='ARGS=-n <%= @instance %> -D <%= @defaults %> -m <%= @mustache %> -s <%= @src %> -d <%= @dest %> -M <%= @mode %> -O <%= @owner %> -G <%= @group %>'
+Environment='ARGS=-n <%= @instance %> -D <%= @defaults %> -m <%= @mustache %> -s <%= @src %> -d <%= @dest %> -M <%= @mode %> -O <%= @owner %> -G <%= @group %> -t <%= @token %>'
 ExecStart=<%= @dtemplate %> $ARGS
 
 User=dtemplate
