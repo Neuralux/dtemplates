@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# chkconfig: 35 90 12
+# description: dtemplate for <%= @instance %>
+#
+
+DTEMPLATE="<%= @dtemplate %>"
+
+function start() {
+    echo -n "Starting dtemplate run for <%= @instance %>"
+    ${DTEMPLATE} -n <%= @instance %> -D <%= @defaults %> -m <%= @mustache %> -s <%= @src %> -d <%= @dest %> -M <%= @mode %> -O <%= @owner %> -G <%= @group %>
+}
+
+case "$1" in
+    start)
+        start;;
+esac
+
+exit $0
